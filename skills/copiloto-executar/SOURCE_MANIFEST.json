@@ -1,0 +1,23 @@
+{
+  "source_archive": "copiloto-executar(1).zip",
+  "archive_size": 12154,
+  "archive_sha256": "c5eedcb739570667c412a0a10906c5274568c8356d7870e1157de8e674dd356d",
+  "files": [
+    {"path":"copiloto-executar/SKILL.md","size":5241,"sha256":"61ae90589fff2e568f38c356e634e37f472ea2a62d118e30e34f5728b046d417"},
+    {"path":"copiloto-executar/scripts/validate_skill.py","size":1785,"sha256":"0044641abc1dc552c3354f9ed04a1391af342040afd23af5330ffb312d98117f"},
+    {"path":"copiloto-executar/references/legado.md","size":359,"sha256":"83ef0358ad0028e612d43307767b7f98ff621d46aeb43d2ae723be956d562e6b"},
+    {"path":"copiloto-executar/references/operacoes.md","size":562,"sha256":"9d49e8e4c00a5b89ecb03b9c2bf71fd905acff088b10651beb34b77c7c0ef7af"},
+    {"path":"copiloto-executar/references/copiloto-007.md","size":468,"sha256":"2a79bd3303962169406f16cddacf0242fb4ca831d0f43d3b434355b7cbd64088"},
+    {"path":"copiloto-executar/references/produtividade.md","size":657,"sha256":"ba085365b76087de8355feb5b53c82cb715ce3b3f6f08cc06b311f31024e7f6c"},
+    {"path":"copiloto-executar/references/orchestrator.md","size":721,"sha256":"233bbff0724446f46ea2b84c60ad1e3fbcd94d201c64310bf13843cefe75a886"},
+    {"path":"copiloto-executar/references/commands.md","size":857,"sha256":"4e1cf8199aac88c11730708d43e2ccf7a29e2eae03f6c3188ba532eee0b8cc88"},
+    {"path":"copiloto-executar/references/contracts/orchestrator-output.schema.json","size":3091,"sha256":"98ddb95c2ddc4d5549bac66d75a82dd069e9d3d731ffc195dc3836db00a62063"},
+    {"path":"copiloto-executar/references/contracts/preflight-checks.json","size":765,"sha256":"320fd55748ca52602be0927792b7fa025aaf4933cbb78e5fc05364aaec23c16f"},
+    {"path":"copiloto-executar/references/contracts/dependencies.json","size":1233,"sha256":"f7bb03987873124c8932a2d4c6f53b4fdfd0e527845cdbb92094d41290f7bd99"},
+    {"path":"copiloto-executar/references/contracts/command-router.json","size":898,"sha256":"874283cf4dfe49867a09164e820b0338372ec53fd89eff027d3c3d3616a7e770"},
+    {"path":"copiloto-executar/references/contracts/orchestrator-input.schema.json","size":1861,"sha256":"2c18d367a064835763fef926a96e0a3f614a98d20783f1e07ccc9e15a28b1fbc"},
+    {"path":"copiloto-executar/references/contracts/drive-bindings.json","size":1664,"sha256":"01c4a0a46a43447cccf4d9b100a54671c0dd38b1166849c298c0211c7f229aee"},
+    {"path":"copiloto-executar/references/contracts/state-contract.json","size":342,"sha256":"a6d92fa991f0bc1548e1805d2d475b14a648964f8eb1a4102f8c2e6edd452605"},
+    {"path":"copiloto-executar/references/contracts/orchestrator-tests.json","size":3137,"sha256":"3b6941a708aaef134e517d2adea8064537881d215a96a5afad2d99ef441fb4e5"}
+  ]
+}
