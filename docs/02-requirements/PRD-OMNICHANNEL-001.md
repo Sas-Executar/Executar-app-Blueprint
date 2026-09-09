@@ -2,7 +2,7 @@
 id: PRD-OMNI-001
 type: prd
 title: Gestão Omnicanal Autônoma e Interdependente
-status: draft_for_pre_approval
+status: pre_approved
 version: 0.9.0
 owner: null
 depends_on:

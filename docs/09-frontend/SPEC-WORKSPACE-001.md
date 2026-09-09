@@ -2,7 +2,7 @@
 id: SPEC-WORKSPACE-001
 type: technical_product_spec
 title: Workspace, Routes and Task Visualization
-status: draft
+status: pre_approved
 version: 0.9.0
 owner: null
 ---
@@ -98,3 +98,5 @@ Qualquer mudança deve retornar um `DomainMutationResult` e disparar refresh/rec
 - conflito de updates concorrentes;
 - ordenação de eventos;
 - cache e realtime.
+
+A pré-aprovação valida a estrutura conceitual do workspace; as decisões técnicas listadas acima permanecem abertas.

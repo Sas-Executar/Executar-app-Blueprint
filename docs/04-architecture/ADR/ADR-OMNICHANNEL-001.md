@@ -2,8 +2,8 @@
 id: ADR-OMNI-001
 type: architecture_decision_record
 title: Single Canonical Work State with Omnichannel Adapters
-status: proposed
-version: 0.9.0
+status: accepted
+version: 1.0.0
 owner: null
 ---
 
@@ -13,7 +13,7 @@ owner: null
 
 O EXECUTAR precisa permitir gestão por App, MCP, WhatsApp, Email, Copiloto e Mapa-OS + Scanner, sem exigir uso contínuo da interface principal.
 
-## Decisão proposta
+## Decisão
 
 Adotar **um único estado canônico de trabalho**. Cada canal atua como adapter/surface e deve operar através dos mesmos contratos de domínio e authority gates.
 
@@ -59,4 +59,4 @@ Custos:
 
 ## Status de implementação
 
-Não determinado por este ADR. O MCP anexado permanece em fase de revisão documental e possui gates próprios antes de implementação.
+Não determinado por este ADR. A aceitação arquitetural não declara MCP, WhatsApp, Email, Scanner ou adapters como implementados, testados, verificados ou released.
