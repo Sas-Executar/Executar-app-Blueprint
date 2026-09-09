@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EXECUTAR Showroom — reconstrução a partir do GitHub</title>
+<style>
+/* Extracted from design-system/tokens/variables.css */
+:root {
+  --color-green-1: #FCFDFC;
+  --color-green-2: #F3FAF6;
+  --color-green-3: #E4F6ED;
+  --color-green-4: #CFF4E2;
+  --color-green-5: #B4F4D5;
+  --color-green-6: #8BF6C2;
+  --color-green-7: #58FBAD;
+  --color-green-8: #1FFF93;
+  --color-green-9: #00BF63;
+  --color-green-10: #008C49;
+  --color-green-11: #007A45;
+  --color-green-12: #064727;
+  --color-azure-1: #FCFCFD;
+  --color-azure-2: #F3F6FA;
+  --color-azure-3: #E4EDF6;
+  --color-azure-4: #CFE2F4;
+  --color-azure-5: #B4D5F4;
+  --color-azure-6: #8BC2F6;
+  --color-azure-7: #58ACFB;
+  --color-azure-8: #1F93FF;
+  --color-azure-9: #1F93FF;
+  --color-azure-10: #007AEB;
+  --color-azure-11: #0B6FD3;
+  --color-azure-12: #062747;
+  --color-neutral-1: #FFFFFF;
+  --color-neutral-2: #F6F6F6;
+  --color-neutral-3: #F0F0F0;
+  --color-neutral-4: #EAEAEA;
+  --color-neutral-5: #E4E4E4;
+  --color-neutral-6: #DEDEDE;
+  --color-neutral-7: #C5C5C5;
+  --color-neutral-8: #ADADAD;
+  --color-neutral-9: #959494;
+  --color-neutral-10: #7C7B7B;
+  --color-neutral-11: #646363;
+  --color-neutral-12: #4B4A4A;
+  --font-size-display: 56px;
+  --font-size-h1: 44px;
+  --font-size-h2: 34px;
+  --font-size-h3: 26px;
+  --font-size-title: 20px;
+  --font-size-subtitle: 18px;
+  --font-size-body-lg: 18px;
+  --font-size-body: 16px;
+  --font-size-body-sm: 14px;
+  --font-size-caption: 12px;
+  --font-size-label: 13px;
+  --font-size-button: 15px;
+  --font-size-overline: 11px;
+  --font-size-mono-data: 14px;
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px rgba(20,20,20,0.04);
+  --shadow-md: 0 4px 12px rgba(20,20,20,0.06);
+  --shadow-hover: 0 4px 16px rgba(20,20,20,0.08);
+  --container-page: 1200px;
+  --container-reading: 720px;
+  --font-family-sans: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+  --font-family-mono: "IBM Plex Mono", SFMono-Regular, Consolas, monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#181818;font-family:var(--font-family-sans);line-height:1.5}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.shell{max-width:1200px;margin:0 auto;padding:0 24px}
+.topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e9e9e9}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--color-green-9);box-shadow:0 0 0 5px var(--color-green-3)}
+.links{display:flex;gap:6px;flex-wrap:wrap}
+.links a{padding:8px 12px;border-radius:8px;color:#5a5a5a}
+.links a.active,.links a:hover{background:#f4f4f4;color:#111}
+.hero{padding:80px 0 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--color-green-11)}
+h1{font-size:clamp(42px,7vw,78px);line-height:.98;letter-spacing:-.05em;margin:14px 0 20px;max-width:850px}
+h2{font-size:34px;letter-spacing:-.025em;margin:0 0 12px}
+h3{font-size:20px;margin:0 0 8px}
+.lead{font-size:20px;color:#555;max-width:680px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{border:1px solid #d9d9d9;background:#fff;padding:11px 16px;border-radius:10px;cursor:pointer}
+.btn.primary{background:var(--color-green-9);border-color:var(--color-green-9);color:#fff}
+.btn.azure{background:var(--color-azure-9);border-color:var(--color-azure-9);color:#fff}
+.mock{background:#101010;color:#fff;border-radius:24px;padding:18px;box-shadow:0 24px 70px rgba(0,0,0,.18);min-height:440px}
+.mock-head{display:flex;gap:6px;padding-bottom:14px;border-bottom:1px solid #292929}
+.mock-head i{width:8px;height:8px;border-radius:50%;display:block;background:#444}
+.chat{display:grid;gap:12px;padding:24px 2px}
+.bubble{max-width:86%;padding:13px 15px;border-radius:16px;background:#222;color:#eee}
+.bubble.me{justify-self:end;background:var(--color-green-9);color:#fff}
+.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+.quick div{padding:12px;border:1px solid #333;border-radius:12px;color:#bbb}
+.section{padding:64px 0;border-top:1px solid #eee}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid #e7e7e7;border-radius:16px;padding:22px;background:#fff;box-shadow:var(--shadow-sm)}
+.card strong{display:block;font-size:30px;letter-spacing:-.04em}
+.pill{display:inline-flex;padding:5px 9px;border-radius:999px;background:var(--color-green-3);color:var(--color-green-11);font-size:12px;font-weight:700;margin-bottom:14px}
+.app-panel{display:grid;grid-template-columns:240px 1fr;min-height:560px;border:1px solid #e8e8e8;border-radius:20px;overflow:hidden}
+.side{padding:18px;background:#fafafa;border-right:1px solid #e8e8e8}
+.side b{display:block;margin-bottom:16px}
+.side a{display:block;padding:10px 12px;border-radius:9px;margin:3px 0;color:#666}
+.side a:hover{background:#eee;color:#111}
+.main{padding:28px}
+.task{display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid #eee}
+.check{width:20px;height:20px;border:2px solid var(--color-green-9);border-radius:6px}
+.library{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.demo-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:18px 0;border-bottom:1px solid #eee}
+.callout{border-left:4px solid var(--color-azure-9);background:var(--color-azure-2);padding:16px;border-radius:0 12px 12px 0}
+.view{display:none}
+.view.active{display:block}
+footer{padding:30px 0 60px;color:#777;font-size:13px}
+@media(max-width:820px){
+  .hero{grid-template-columns:1fr;padding-top:48px}
+  .grid{grid-template-columns:1fr}
+  .library{grid-template-columns:1fr}
+  .app-panel{grid-template-columns:1fr}
+  .side{display:none}
+  .links{overflow:auto;white-space:nowrap;flex-wrap:nowrap;max-width:70vw}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="shell nav">
+    <a class="brand" href="#/"><span class="dot"></span>EXECUTAR</a>
+    <nav class="links">
+      <a href="#/" data-route="/">Showroom</a>
+      <a href="#/blog" data-route="/blog">Blog</a>
+      <a href="#/app" data-route="/app">App</a>
+      <a href="#/institucional" data-route="/institucional">Institucional</a>
+      <a href="#/biblioteca" data-route="/biblioteca">Biblioteca</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="view" data-view="/">
+  <div class="shell hero">
+    <div>
+      <div class="eyebrow">Design System · EXECUTAR Classic</div>
+      <h1>Menos atrito. Mais execução.</h1>
+      <p class="lead">Showroom standalone reconstruído com os tokens documentados no repositório: verde #00BF63, azure #1F93FF, IBM Plex Sans e a gramática de componentes do ecossistema.</p>
+      <div class="actions">
+        <a class="btn primary" href="#/app">Abrir App</a>
+        <a class="btn" href="#/biblioteca">Ver componentes</a>
+      </div>
+    </div>
+    <div class="mock">
+      <div class="mock-head"><i></i><i></i><i></i></div>
+      <div class="chat">
+        <div class="bubble">Qual é a sua prioridade agora?</div>
+        <div class="bubble me">Fechar o entregável da sprint.</div>
+        <div class="bubble">Plano pronto. Vou manter WIP = 1 e puxar a próxima ação executável.</div>
+        <div class="quick"><div>Agora</div><div>Mapa-OS</div><div>Status report</div><div>Replanejar</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="shell section">
+    <div class="grid">
+      <div class="card"><span class="pill">Produto</span><h3>Organiza trabalho</h3><p>Projeto, entregável, tarefa e ação em uma hierarquia de execução.</p></div>
+      <div class="card"><span class="pill">Operação</span><h3>Capacidade explícita</h3><p>Planejamento orientado ao que realmente cabe no ciclo.</p></div>
+      <div class="card"><span class="pill">IA</span><h3>Copiloto operacional</h3><p>Status, replanejamento, evidências e comandos dentro do fluxo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="view" data-view="/blog">
+  <div class="shell section">
+    <div class="eyebrow">Blog</div><h2>Custo cognitivo na prática</h2>
+    <p class="lead">Página editorial de demonstração para validar tipografia, cards, categorias e chamadas.</p>
+    <div class="grid" style="margin-top:30px">
+      <article class="card"><span class="pill">Cognição</span><h3>Por que trocar de contexto custa energia</h3><p>Um guia visual sobre task switching, retomada e carga de memória de trabalho.</p></article>
+      <article class="card"><span class="pill">Produto</span><h3>Do dado à próxima ação</h3><p>Como transformar observação em decisão operacional com rastreabilidade.</p></article>
+      <article class="card"><span class="pill">Método</span><h3>WIP 1 como regra de execução</h3><p>Reduza concorrência interna e torne o gargalo visível.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="view" data-view="/app">
+  <div class="shell section">
+    <div class="eyebrow">App</div><h2>Workspace de execução</h2>
+    <div class="app-panel" style="margin-top:26px">
+      <aside class="side"><b>EXECUTAR</b><a>Overview</a><a>Roadmap</a><a>Sprint</a><a>Agora</a><a>Hoje</a><a>Copiloto</a><a>Mapa-OS</a></aside>
+      <div class="main">
+        <span class="pill">Sprint ativa</span>
+        <h2 style="font-size:28px">Agora</h2>
+        <p style="color:#666">1 ação em execução · capacidade protegida</p>
+        <div class="task"><span class="check"></span><div><b>Consolidar handoff da design system</b><br><small>Entregável: UI + tokens + protocolo</small></div></div>
+        <div class="task"><span class="check"></span><div><b>Validar estados responsivos</b><br><small>Próxima ação disponível</small></div></div>
+        <div class="task"><span class="check"></span><div><b>Registrar evidência de conclusão</b><br><small>Bloqueada pela ação atual</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="view" data-view="/institucional">
+  <div class="shell section">
+    <div class="eyebrow">Institucional</div><h2>Princípios do sistema</h2>
+    <div class="grid" style="margin-top:28px">
+      <div class="card"><strong>01</strong><h3>Clareza</h3><p>O sistema deve tornar visível o que entregar, o que cabe e o que fazer agora.</p></div>
+      <div class="card"><strong>02</strong><h3>Rastreabilidade</h3><p>Decisão, requisito, evidência e status permanecem ligados.</p></div>
+      <div class="card"><strong>03</strong><h3>Execução</h3><p>Planejamento só é útil quando reduz distância até a próxima ação.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="view" data-view="/biblioteca">
+  <div class="shell section">
+    <div class="eyebrow">Biblioteca</div><h2>Componentes básicos</h2>
+    <div class="library" style="margin-top:24px">
+      <div class="card">
+        <h3>Botões e badges</h3>
+        <div class="demo-row"><button class="btn primary">Primário</button><button class="btn azure">Azure</button><button class="btn">Secundário</button></div>
+        <div class="demo-row"><span class="pill">Em andamento</span><span class="pill" style="background:var(--color-azure-3);color:var(--color-azure-11)">Informação</span></div>
+      </div>
+      <div class="card">
+        <h3>Callout</h3>
+        <div class="callout"><b>Informação operacional</b><br>Este bloco usa a família Azure do design system.</div>
+      </div>
+      <div class="card"><h3>Card</h3><p>Superfície simples, borda leve, raio de 16px e sombra discreta.</p></div>
+      <div class="card"><h3>Tipografia</h3><p style="font-size:34px;font-weight:600;letter-spacing:-.02em;margin:8px 0">Heading</p><p>Body · 16px / 26px</p><code style="font-family:var(--font-family-mono)">mono-data: 14px</code></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="shell">EXECUTAR Showroom · reconstruído a partir dos tokens e da estrutura do repositório GitHub.</div></footer>
+
+<script>
+function renderRoute(){
+  const route=(location.hash||"#/").slice(1);
+  const known=["/","/blog","/app","/institucional","/biblioteca"];
+  const current=known.includes(route)?route:"/";
+  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.dataset.view===current));
+  document.querySelectorAll("[data-route]").forEach(a=>a.classList.toggle("active",a.dataset.route===current));
+  window.scrollTo(0,0);
+}
+addEventListener("hashchange",renderRoute);
+renderRoute();
+</script>
+</body>
+</html>
