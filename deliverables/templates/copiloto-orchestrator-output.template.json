@@ -1,0 +1,27 @@
+{
+  "status": "{{STATUS}}",
+  "route": {"module": "{{MODULE_ID}}", "action": "{{ACTION}}"},
+  "read_scope": ["{{READ_SCOPE_01}}"],
+  "write_policy": {
+    "allowed": "{{WRITE_ALLOWED}}",
+    "targets": ["{{WRITE_TARGET_01}}"],
+    "requires_human_confirmation": "{{REQUIRES_HUMAN_CONFIRMATION}}"
+  },
+  "state_transition": {
+    "object_id": "{{OBJECT_ID}}",
+    "from": "{{STATE_FROM}}",
+    "to": "{{STATE_TO}}",
+    "guards": ["{{GUARD_01}}"]
+  },
+  "derived_progress_pct": "{{DERIVED_PROGRESS_PCT}}",
+  "ui": {
+    "headline": "{{HEADLINE}}",
+    "agora": "{{AGORA}}",
+    "tempo": "{{TEMPO}}",
+    "conclui_quando": "{{DOD}}",
+    "evidencia": "{{EVIDENCIA}}",
+    "proxima_acao": "{{PROXIMA_ACAO}}",
+    "mermaid": "{{MERMAID_OPTIONAL}}"
+  },
+  "warnings": ["{{WARNING_01}}"]
+}
