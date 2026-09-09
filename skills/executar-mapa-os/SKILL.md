@@ -1,22 +1,52 @@
 ---
 name: executar-mapa-os
-description: Transforme documentos, planos, cronogramas, status e evidências do ecossistema EXECUTAR em um Mapa-OS operacional rastreável, com posição canônica, horizontes Agora/Próximo/Depois, próxima ação elegível, evidências e projeção Prisma A4 opcional. Use quando o usuário pedir Mapa-OS, mapa operacional, centro de comando, retomada, status EXECUTAR, Agora/Próximo/Depois, plano semanal Prisma, ou precisar converter material disperso em estado executável. Não use para promover estados sem evidência nem para substituir a fonte canônica do projeto.
+source_version: 1.1.0
+description: Transforme documentos, planos, cronogramas, status e evidências do ecossistema EXECUTAR em um Mapa-OS operacional rastreável e em seu entregável analógico/imprimível, com posição canônica, horizontes Agora/Próximo/Depois, próxima ação elegível, evidências e projeção Prisma A4 opcional. Para começar sem jargão, aceite 00, 01 e 02, seus comandos verbais e pedidos equivalentes em linguagem natural. Não use para promover estados sem evidência nem para substituir a fonte canônica do projeto.
 ---
 
 # EXECUTAR Mapa-OS
 
 Converta material de projeto em uma leitura operacional única e rastreável. A saída deve responder: onde o projeto está, o que está ativo, o que bloqueia, qual evidência existe e qual é a única próxima ação elegível.
 
+## Papel do produto
+
+O **Mapa-OS é o entregável gerado pelo agente para gestão analógica das tarefas**. A projeção física/imprimível materializa a fonte digital canônica, mas não cria um segundo estado do projeto.
+
+O Scanner é uma capability externa à skill: ele pode reconhecer símbolos físicos presentes no Mapa-OS e encaminhá-los ao Action Resolver. `Mapa-OS ≠ Scanner ≠ mutação de tarefa`.
+
+## Ativos internos destacados
+
+Leia `INTERNAL_ASSET_INDEX.md` como índice obrigatório dos ativos internos.
+
+### Dois prompts oficiais
+1. `references/prompts/01-prompt-mestre-prisma.md` — prompt mestre reutilizável; ativação `01` / `/criar-mapa-semanal`.
+2. `references/prompts/02-exemplo-preenchido-prisma.md` — exemplo preenchido exclusivamente ilustrativo; ativação `02` / `/testar-mapa-prisma`.
+
+### Template oficial
+- `assets/templates/status-report-prisma-a4-v4.html` — Prisma A4 V4, 210 × 297 mm, três faces de 99 mm e 100 placeholders canônicos.
+
+### Workflows internos
+- `references/workflows/01-build-mapa-os.md`
+- `references/workflows/02-prisma-7d.md`
+- `references/workflows/03-example-test.md`
+
+## Ativação simples para usuários leigos
+
+- 00, `/ajuda-mapa` ou frases equivalentes exibem o menu curto.
+- 01, `/criar-mapa-semanal` ou equivalente inicia o Prompt Mestre Prisma.
+- 02, `/testar-mapa-prisma` ou equivalente inicia o Exemplo Preenchido, sempre identificado como ilustrativo.
+
+IDs numéricos só ativam este roteador quando a mensagem for exatamente 00, 01 ou 02, ou vier com prefixo explícito `Mapa`.
+
 ## Antes de operar
 
-Leia sempre [references/architecture-executar.md](references/architecture-executar.md) e [references/mapa-os-contract.md](references/mapa-os-contract.md). Leia [references/projections.md](references/projections.md) somente quando emitir uma projeção visual ou imprimível. Leia [references/source-audit.md](references/source-audit.md) quando precisar distinguir o corpus canônico dos protótipos anexados.
+Leia sempre `INTERNAL_ASSET_INDEX.md`, `references/architecture-executar.md` e `references/mapa-os-contract.md`. Leia `references/projections.md` quando emitir projeção visual/imprimível.
 
 ## Entradas
 
-Aceite arquivos, texto no chat ou o objeto de `schemas/input.schema.json`. Extraia apenas conteúdo sustentado pelas fontes. Classifique cada insumo como norma, decisão, estado, evidência, plano, template, exemplo ou conteúdo ilustrativo.
+Aceite arquivos, texto no chat ou objeto de schema. Extraia apenas conteúdo sustentado pelas fontes. Classifique cada insumo como norma, decisão, estado, evidência, plano, template, exemplo ou conteúdo ilustrativo.
 
 Se faltar informação:
-
 - continue nas partes independentes;
 - use `NAO_DETERMINADO` para lacunas não bloqueantes;
 - use `BLOCKED` apenas quando a lacuna impedir uma saída obrigatória;
@@ -24,82 +54,55 @@ Se faltar informação:
 
 ## Fluxo
 
-1. Inventarie todas as fontes e preserve seus IDs, nomes, versões e datas.
-2. Extraia objetos e relações na hierarquia `Projeto → Entrega/Dia Lógico → Fluxo → Ação`.
-3. Classifique cada comportamento como `DETERMINISTICO`, `INTERPRETATIVO`, `EXIGE_HUMANO` ou `NAO_DETERMINADO`.
-4. Preserve dependências, critérios de conclusão, gates, evidências, prazos originais e previsões atuais.
-5. Reconcilie conflitos somente quando uma fonte com autoridade explícita resolver a disputa. Caso contrário, registre o conflito.
-6. Calcule apenas derivações determinísticas sustentadas, como percentuais com numerador e denominador, datas relativas com base explícita e elegibilidade por dependências.
-7. Determine a posição operacional e aplique WIP=1: no máximo uma entrega, um fluxo e uma ação ativos.
-8. Selecione `next_action` apenas entre ações elegíveis e não bloqueadas. Se houver empate sem regra de precedência, pare em `EXIGE_HUMANO`.
-9. Organize projeções `Agora`, `Próximo` e `Depois` sem criar objetos novos ou mudar seus estados.
-10. Valide a saída com `schemas/output.schema.json` e, quando disponível, `scripts/validate_mapa.py`.
-11. Emita a resposta documental e os artefatos solicitados. Não declare como testado, verificado ou publicado o que apenas foi criado ou implementado.
+1. Inventarie fontes e preserve IDs, nomes, versões e datas.
+2. Extraia `Projeto → Entrega/Dia Lógico → Fluxo → Ação`.
+3. Classifique comportamento como `DETERMINISTICO`, `INTERPRETATIVO`, `EXIGE_HUMANO` ou `NAO_DETERMINADO`.
+4. Preserve dependências, critérios, gates, evidências, prazos originais e previsões atuais.
+5. Reconcilie conflitos somente com autoridade explícita.
+6. Calcule derivações determinísticas sustentadas.
+7. Determine posição operacional e aplique WIP=1.
+8. Selecione `next_action` apenas entre ações elegíveis e não bloqueadas.
+9. Organize Agora/Próximo/Depois sem criar objetos novos.
+10. Valide a saída.
+11. Emita a resposta documental e os artefatos solicitados.
 
 ## Invariantes
 
 - Posição é estado operacional.
-- Dia Lógico é entrega; não é data do calendário.
+- Dia Lógico é entrega; não é data.
 - Passagem do tempo não altera estado sozinha.
-- WIP operacional é `1 entrega → 1 fluxo → 1 ação`.
-- Dependências válidas governam elegibilidade; ordem numérica é apenas preferencial.
+- WIP é `1 entrega → 1 fluxo → 1 ação`.
+- Dependências governam elegibilidade.
 - `existente ≠ completo ≠ aprovado ≠ implementado ≠ testado ≠ verificado ≠ publicado`.
-- Uma declaração de “feito” não fecha objeto cujo contrato exige evidência ou gate.
-- Atraso preserva prazo original e recebe previsão atual separada; nunca sobrescreva um pelo outro.
-- Agora/Próximo/Depois, calendário e Prisma são projeções da mesma fonte; não são estruturas concorrentes.
-- Contagens de três são referências de template, não limites ontológicos.
+- “feito” não substitui evidência.
+- Prazo original e previsão atual são campos distintos.
+- Agora/Próximo/Depois, calendário e Prisma são projeções da mesma fonte.
 
-## Evidência e classificação epistêmica
+## Evidência
 
-Use `A_OBSERVADO`, `B_PRIMARIO`, `C_PUBLICADO`, `D_INTERNO` ou `E_INFERIDO`. Nunca apresente inferência como observação, dado primário ou fonte publicada. Vincule toda promoção de estado à evidência e ao critério que ela satisfaz.
+Use `A_OBSERVADO`, `B_PRIMARIO`, `C_PUBLICADO`, `D_INTERNO` ou `E_INFERIDO`. Nunca apresente inferência como observação ou fonte publicada.
 
 ## Saída canônica
 
-Produza um objeto compatível com `schemas/output.schema.json` contendo, no mínimo:
-
-- identidade documental e referências de fonte;
-- projeto e posição atual;
-- síntese 3P+N;
-- itens hierárquicos, dependências, estados e evidências;
-- horizontes Agora/Próximo/Depois;
-- `next_action` única ou motivo explícito para sua ausência;
-- bloqueios, conflitos e lacunas;
-- projeção solicitada e estado de validação.
-
-Na resposta humana, comece pelo Document Reader definido em [references/mapa-os-contract.md](references/mapa-os-contract.md), depois entregue conclusão, desenvolvimento e próximos passos. O bloco documental não substitui o artefato solicitado.
+Produza identidade documental, referências, projeto, posição, 3P+N, itens hierárquicos, dependências, estados, evidências, horizontes, `next_action`, bloqueios, conflitos, lacunas, projeção e estado de validação.
 
 ## Projeções
 
-- `mapa_operacional`: leitura de retomada, foco, bloqueios, evidência e próxima ação.
-- `agora_proximo_depois`: três horizontes sem mutar a estrutura canônica.
-- `status_terminal`: síntese compacta de progresso, posição, 3P+N e tags.
-- `prisma_7d`: status semanal A4 de três faces. Leia [references/projections.md](references/projections.md), construa payload conforme `schemas/prism-report.schema.json` e renderize com `scripts/render_prism.py`.
+- `mapa_operacional`
+- `agora_proximo_depois`
+- `status_terminal`
+- `prisma_7d`
 
-Se o usuário não escolher uma projeção, use `mapa_operacional`. Não gere calendário de sete dias quando as fontes não sustentarem sete dias; registre a lacuna ou peça o mínimo necessário.
+Se o usuário não escolher projeção, use `mapa_operacional`.
 
 ## Prisma A4 V4
 
-O template em `assets/templates/status-report-prisma-a4-v4.html` é imutável durante população: A4 retrato 210 × 297 mm, três faces de 99 mm e 100 placeholders canônicos nos namespaces `DOC_*`, `EPIC_*`, `CALENDAR_*` e `RESULT_*`.
-
-Não edite HTML/CSS para acomodar conteúdo. Condense semanticamente dentro dos limites do schema; se houver perda inevitável, retorne erro de fit. Renderize com:
-
-```bash
-python scripts/render_prism.py payload.json output.html
-```
+O template interno é imutável durante a população. Não edite HTML/CSS para acomodar conteúdo; condense semanticamente dentro dos limites do schema. O entregável deve preservar 210 × 297 mm, três faces de 99 mm e os namespaces `DOC_*`, `EPIC_*`, `CALENDAR_*` e `RESULT_*`.
 
 ## Limites de autoridade
 
-Não invente requisitos, integrações, permissões, evidências, datas, owners, IDs ou estados. Não envie mensagens, publique, faça deploy ou altere sistemas externos sem solicitação e autorização específicas. Não escolha arbitrariamente entre duas próximas ações igualmente elegíveis. Não transforme exemplos preenchidos do corpus em regra normativa.
+Não invente requisitos, integrações, permissões, evidências, datas, owners, IDs ou estados. Não escolha arbitrariamente entre duas ações igualmente elegíveis. Não transforme exemplo preenchido em regra normativa.
 
 ## Critérios de conclusão
 
-A execução termina somente quando:
-
-- fontes e lacunas estão registradas;
-- hierarquia e IDs são consistentes;
-- WIP e dependências foram verificados;
-- estados não foram promovidos sem evidência;
-- existe uma única próxima ação elegível ou justificativa explícita para ausência;
-- saída valida no schema;
-- projeções preservam a fonte canônica;
-- artefatos pedidos foram criados e validados no nível realmente alcançado.
+A execução termina somente quando fontes/lacunas estão registradas, hierarquia e IDs são consistentes, WIP e dependências foram verificados, estados não foram promovidos sem evidência, há única próxima ação ou justificativa explícita, e os artefatos foram validados no nível realmente alcançado.

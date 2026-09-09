@@ -14,7 +14,7 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | Deliverables | DELIV-* | deliverables | reusable placeholder output models | P0 |
 | Prompts | PROMPT-* | docs/06-prompts | prompt contracts and failures | P0 |
 | Data | DATA-* | docs/07-data | model, migrations, RLS, retention | P0 |
-| API | API-* | docs/08-api-contracts | API/event/error/delivery contracts | P0 |
+| API | API-* | docs/08-api-contracts | API/event/error/delivery/action contracts | P0 |
 | Frontend | UI-* | docs/09-frontend | IA, routes, states, design system | P0/P1 |
 | Backend | BE-* | docs/10-backend | boundaries, use cases, jobs | P0/P1 |
 | Security | SEC-* | docs/11-security | threats, permissions, injection | P0 |
@@ -29,26 +29,44 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | ID | Artifact | Path | Status | Version | Role |
 |---|---|---|---|---|---|
 | PROD-001 | EXECUTAR — Visão do Produto | `docs/01-product/PRODUCT_VISION.md` | pre_approved | 0.9.0 | semantic root for product derivation |
-| PRD-ROUTINES-001 | Modo Rotinas | `docs/02-requirements/PRD-ROUTINES-001.md` | pre_approved | 0.9.0 | product contract for agent-configured task automation and report delivery |
-| ADR-ROUTINES-001 | Rotinas agentic para automação e autogestão | `docs/04-architecture/ADR/ADR-ROUTINES-001.md` | accepted | 1.0.0 | architecture decision for routine runtime, authority and delivery separation |
+| PRD-ROUTINES-001 | Modo Rotinas | `docs/02-requirements/PRD-ROUTINES-001.md` | pre_approved | 0.9.0 | agent-configured task automation and report delivery |
+| ADR-ROUTINES-001 | Rotinas agentic para automação e autogestão | `docs/04-architecture/ADR/ADR-ROUTINES-001.md` | accepted | 1.0.0 | routine runtime, authority and delivery separation |
 | SPEC-ROUTINES-001 | Runtime de Rotinas, Autogestão e Status Reports | `docs/04-architecture/specs/SPEC-ROUTINES-001.md` | draft | 0.9.0 | technical runtime/data/delivery specification |
-| AGENT-ROUTINES-001 | Modo Rotinas | `docs/05-agent/ROUTINES_MODE.md` | pre_approved | 0.9.0 | agent interaction and unattended-run mode description |
-| PROMPT-ROUTINES-001 | Prompt Mestre · Modo Rotinas | `docs/06-prompts/PROMPT-ROUTINES-001.md` | pre_approved | 0.9.0 | reusable routine execution prompt with placeholders |
-| API-ROUTINE-DELIVERY-001 | Routine Report Delivery Contract | `docs/08-api-contracts/ROUTINE_DELIVERY_CONTRACT.md` | draft | 0.9.0 | common delivery contract for App Reports, Email and WhatsApp |
-| DELIV-ROUT-001 | Routine Status Report HTML | `deliverables/templates/status-report-routine.template.html` | registered | 1.0.0 | canonical placeholder Status Report template |
-| DELIV-ROUT-002 | Routine Status Report channel variants | `deliverables/templates/status-report-routine-channel-variants.template.md` | registered | 1.0.0 | App Reports, Email fallback and WhatsApp projections |
-| AGENT-SKILL-REGISTRY-001 | Skill Registry | `docs/05-agent/SKILL_REGISTRY.md` | registered | 1.0.0 | inventory and authority boundaries for skills |
-| AGENT-DELIV-REGISTRY-001 | Deliverable Registry | `docs/05-agent/DELIVERABLE_REGISTRY.md` | registered | 1.1.0 | maps skills/modes to placeholder output models |
-| SKILL-MAPA-OS-001 | executar-mapa-os | `skills/executar-mapa-os/SKILL.md` | registered | 1.0.0 | operational Mapa-OS skill package |
+| PRD-SCANNER-001 | Visual Symbol Scanner | `docs/02-requirements/PRD-SCANNER-001.md` | registered_from_source | 1.0.0 | product behavior and requirements for physical visual actions |
+| ADR-SCANNER-001 | Visual instance recognition | `docs/04-architecture/ADR/ADR-SCANNER-001.md` | registered_from_source | 1.0.0 | scanner recognition architecture and separation of concerns |
+| SPEC-SCANNER-001 | Visual Symbol Scanner technical spec | `docs/04-architecture/specs/SPEC-SCANNER-001.md` | registered_from_source | 1.0.0 | runtime modules, registry, latch and command dispatch |
+| API-SCANNER-ACTION-001 | Scanner Action Contract | `docs/08-api-contracts/SCANNER_ACTION_CONTRACT.md` | registered_from_source | 1.0.0 | VisualSymbolId → command → domain result contract |
+| AGENT-ROUTINES-001 | Modo Rotinas | `docs/05-agent/ROUTINES_MODE.md` | pre_approved | 0.9.0 | unattended-run mode description |
+| PROMPT-ROUTINES-001 | Prompt Mestre · Modo Rotinas | `docs/06-prompts/PROMPT-ROUTINES-001.md` | pre_approved | 0.9.0 | reusable routine prompt |
+| API-ROUTINE-DELIVERY-001 | Routine Report Delivery Contract | `docs/08-api-contracts/ROUTINE_DELIVERY_CONTRACT.md` | draft | 0.9.0 | App Reports / Email / WhatsApp delivery contract |
+| DELIV-ROUT-001 | Routine Status Report HTML | `deliverables/templates/status-report-routine.template.html` | registered | 1.0.0 | canonical placeholder Status Report |
+| DELIV-ROUT-002 | Routine Status Report channel variants | `deliverables/templates/status-report-routine-channel-variants.template.md` | registered | 1.0.0 | channel projections |
+| AGENT-SKILL-REGISTRY-001 | Skill Registry | `docs/05-agent/SKILL_REGISTRY.md` | registered | 1.1.0 | inventory and authority boundaries for skills |
+| AGENT-DELIV-REGISTRY-001 | Deliverable Registry | `docs/05-agent/DELIVERABLE_REGISTRY.md` | registered | 1.2.0 | maps skills/modes to output models |
+| SKILL-MAPA-OS-001 | executar-mapa-os | `skills/executar-mapa-os/SKILL.md` | registered | 1.1.0 | generates the operational/analog Mapa-OS projection |
+| SKILL-MAPA-OS-ASSETS-001 | Mapa-OS Internal Asset Index | `skills/executar-mapa-os/INTERNAL_ASSET_INDEX.md` | registered | 1.1.0 | highlights 2 prompts, internal template and workflows |
+| PROMPT-MAPA-001 | Prompt Mestre Prisma | `skills/executar-mapa-os/references/prompts/01-prompt-mestre-prisma.md` | registered | 1.1.0 | reusable Mapa-OS weekly prompt |
+| PROMPT-MAPA-002 | Exemplo Preenchido Prisma | `skills/executar-mapa-os/references/prompts/02-exemplo-preenchido-prisma.md` | example_only | 1.1.0 | isolated illustrative prompt |
+| TEMPLATE-MAPA-001 | Prisma A4 V4 internal template | `skills/executar-mapa-os/assets/templates/status-report-prisma-a4-v4.html` | registered | 1.1.0 | physical three-face analog output template |
+| WF-MAPA-001 | Build Mapa-OS | `skills/executar-mapa-os/references/workflows/01-build-mapa-os.md` | registered | 1.1.0 | canonical map construction workflow |
+| WF-MAPA-002 | Prisma 7d | `skills/executar-mapa-os/references/workflows/02-prisma-7d.md` | registered | 1.1.0 | weekly render/validation workflow |
+| WF-MAPA-003 | Example Test | `skills/executar-mapa-os/references/workflows/03-example-test.md` | example_only | 1.1.0 | isolated demonstration workflow |
+| DELIV-MAPA-006 | Mapa-OS Scanner symbol strip | `deliverables/templates/mapa-os-scanner-symbol-strip.template.html` | registered | 1.0.0 | physical symbol surface; actions resolved by Scanner |
 | SKILL-COP-001 | copiloto-executar | `skills/copiloto-executar/SKILL.md` | registered | source package | daily EXECUTAR copiloto skill package |
+
+## Boundary: Mapa-OS × Scanner
+
+`Mapa-OS generation → analog physical surface → Scanner recognition → VisualSymbolId → CommandDispatcher → domain action`.
+
+Mapa-OS remains a projection/deliverable. Scanner owns visual recognition and action dispatch. Printed state never becomes a parallel source of truth.
 
 ## Canonical flow
 EVID → PROBLEM → ICP → JOURNEY → JTBD → VALUE → PRD → REQ → AC → ADR → SPEC → CODE → TEST → EVAL → RELEASE → KPI → LEARNING
 
 ## Agent read path
-`AGENTS.md` → this index → affected domain docs → requirements/AC → ADR/contracts/specs/schemas → registered skills/deliverable contracts → code → tests → implementation → verification → documentation update.
+`AGENTS.md` → this index → affected domain docs → requirements/AC → ADR/contracts/specs/schemas → registered skills/internal asset indexes → code → tests → implementation → verification → documentation update.
 
 ## State semantics
 `draft ≠ review ≠ pre_approved ≠ approved ≠ implemented ≠ tested ≠ verified ≠ released`.
 
-`registered` is an inventory/traceability state for imported packages and templates. It does not imply `approved`, `implemented`, `tested`, `verified` or `released`.
+`registered` and `registered_from_source` are inventory/traceability states. They do not imply implementation, verification or release.
