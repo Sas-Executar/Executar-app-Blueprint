@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{REPORT_DOCUMENT_TITLE}}</title>
+<style>
+html,body{margin:0;padding:0;background:#f4f4f3;color:#111}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;padding:24px 12px 64px}.sheet{max-width:760px;margin:0 auto;background:#fff;border:1px solid #dedede}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace}.header{background:#111;color:#fff;padding:18px 22px}.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#d8d8d8}.title{font-size:22px;font-weight:700;margin-top:6px;line-height:1.15}.meta{font-size:11px;color:#9a9a9a;margin-top:8px;line-height:1.5}.section{padding:18px 20px;border-top:1px solid #ececec}.section-label{font-size:11px;color:#777;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}.dashboard,.depth,.triptych,.properties,.deliveries{width:100%;border-collapse:collapse;table-layout:fixed}.hero{font-size:44px;line-height:1;font-weight:700;letter-spacing:-.04em}.hero-label{font-size:12px;color:#777;margin-top:5px}.stat{text-align:right;vertical-align:bottom}.stat strong{display:block;font-size:18px}.stat span{font-size:11px;color:#777}.progress-track{height:6px;background:#efefef;margin-top:16px;overflow:hidden}.progress-fill{height:6px;width:{{PROJECT_PROGRESS_PERCENT}}%;background:#7c3aed}.depth-wrap{border-top:1px solid #ececec;border-bottom:1px solid #ececec;margin-top:16px}.depth td{padding:11px 8px;text-align:center;border-right:1px solid #ececec}.depth td:last-child{border-right:none}.depth-name{font-size:10px;color:#777;text-transform:uppercase}.depth-val{font-size:13px;font-weight:700;margin-top:3px}.depth-current{background:#f5f3ff}.depth-current .depth-name,.depth-current .depth-val{color:#7c3aed}.triptych-wrap{margin-top:16px;border:1px solid #ececec}.triptych td{padding:14px;vertical-align:top;border-right:1px solid #ececec}.triptych td:last-child{border-right:none}.triptych td.current{background:#faf8ff}.tri-top{font-size:11px;color:#777;display:flex;justify-content:space-between;gap:10px}.tri-title{font-size:14px;line-height:1.35;font-weight:600;margin-top:12px;min-height:38px}.tri-state{font-size:11px;color:#777;margin-top:14px}.current .tri-top,.current .tri-state{color:#7c3aed}.now{margin-top:16px;border-top:2px solid #111;padding-top:14px}.now-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.now-title{font-size:18px;font-weight:700;line-height:1.25}.now-meta{font-size:12px;color:#777;margin-top:4px}.chip{display:inline-block;background:#ede9fe;color:#6d28d9;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:600}.properties td,.deliveries td{padding:12px 0;border-bottom:1px solid #ececec;vertical-align:top;font-size:14px;line-height:1.45}.properties .key,.deliveries .key{width:132px;padding-right:12px;font-size:12px;font-weight:700;color:#555}.properties .accent{color:#7c3aed}.tags{padding-top:16px;border-top:2px solid #111;margin-top:18px}.tag-label{font-size:11px;color:#777;margin:10px 0 8px}.tag{display:inline-block;border-radius:999px;padding:5px 10px;margin:0 6px 6px 0;font-size:12px;font-weight:600;background:#f1f1f1;color:#444}.tag.focus{background:#ede9fe;color:#6d28d9}.footer{padding:14px 20px 18px;border-top:1px solid #ececec;font-size:11px;color:#8a8a8a;line-height:1.5}@media(max-width:560px){body{padding:0;background:#fff}.sheet{border:none}.header,.section{padding:16px}.hero{font-size:38px}.properties .key,.deliveries .key{width:104px}.triptych td{padding:12px 10px}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="header mono">
+    <div class="kicker">EXECUTAR / STATUS REPORT / {{ROUTINE_NAME}}</div>
+    <div class="title">{{REPORT_TITLE}}</div>
+    <div class="meta">schema: EXECUTAR_ROUTINE_STATUS_V1 · run: {{RUN_ID}} · status: {{RUN_STATUS}} · data: {{REPORT_DATETIME}}</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label mono">PROGRESSO / PROJETO</div>
+    <table class="dashboard" role="presentation"><tr>
+      <td style="width:50%"><div class="hero">{{PROJECT_PROGRESS_PERCENT}}%</div><div class="hero-label">{{PROJECT_PROGRESS_LABEL}}</div></td>
+      <td class="stat" style="width:25%"><strong>{{CYCLE_CURRENT}}</strong><span>{{CYCLE_LABEL}}</span></td>
+      <td class="stat" style="width:25%"><strong>{{TODAY_DELTA}}</strong><span>{{TODAY_DELTA_LABEL}}</span></td>
+    </tr></table>
+    <div class="progress-track"><div class="progress-fill"></div></div>
+
+    <div class="depth-wrap"><table class="depth" role="presentation"><tr>
+      <td><div class="depth-name mono">Projeto</div><div class="depth-val">{{DEPTH_PROJECT}}</div></td>
+      <td><div class="depth-name mono">Ciclo</div><div class="depth-val">{{DEPTH_CYCLE}}</div></td>
+      <td class="depth-current"><div class="depth-name mono">Hoje</div><div class="depth-val">{{DEPTH_TODAY}}</div></td>
+      <td><div class="depth-name mono">Tarefa</div><div class="depth-val">{{DEPTH_TASK}}</div></td>
+      <td><div class="depth-name mono">Ação</div><div class="depth-val">{{DEPTH_ACTION}}</div></td>
+    </tr></table></div>
+
+    <div class="triptych-wrap"><table class="triptych" role="presentation"><tr>
+      <td><div class="tri-top"><span>{{PREVIOUS_LABEL}}</span><b>{{PREVIOUS_METRIC}}</b></div><div class="tri-title">{{PREVIOUS_TITLE}}</div><div class="tri-state">{{PREVIOUS_STATE}}</div></td>
+      <td class="current"><div class="tri-top"><span>{{CURRENT_LABEL}}</span><b>{{CURRENT_METRIC}}</b></div><div class="tri-title">{{CURRENT_TITLE}}</div><div class="tri-state">{{CURRENT_STATE}}</div></td>
+      <td><div class="tri-top"><span>{{NEXT_LABEL}}</span><b>{{NEXT_METRIC}}</b></div><div class="tri-title">{{NEXT_TITLE}}</div><div class="tri-state">{{NEXT_STATE}}</div></td>
+    </tr></table></div>
+
+    <div class="now"><div class="now-row"><div>
+      <div class="section-label mono" style="margin-bottom:6px;color:#7c3aed">AGORA · {{NOW_ACTION_ID}}</div>
+      <div class="now-title">{{NOW_ACTION_TITLE}}</div>
+      <div class="now-meta">{{NOW_META}}</div>
+      <div class="now-meta">Conclui quando: {{NOW_COMPLETION_CRITERION}}</div>
+      <div class="now-meta">Evidência: {{NOW_EVIDENCE_REQUIRED}}</div>
+    </div><span class="chip">{{NOW_CHIP}}</span></div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label mono">STATUS / PROPERTIES</div>
+    <table class="properties" role="presentation">
+      <tr><td class="key mono">contexto</td><td>{{CONTEXT}}</td></tr>
+      <tr><td class="key mono accent">problema</td><td>{{PROBLEM}}</td></tr>
+      <tr><td class="key mono">processo</td><td>{{PROCESS}}</td></tr>
+      <tr><td class="key mono accent">progresso</td><td>{{PROGRESS_TEXT}}</td></tr>
+      <tr><td class="key mono">passo_1</td><td>{{NEXT_1}}</td></tr>
+      <tr><td class="key mono">passo_2</td><td>{{NEXT_2}}</td></tr>
+      <tr><td class="key mono">passo_3</td><td>{{NEXT_3}}</td></tr>
+      <tr><td class="key mono accent">risco</td><td>{{RISK}}</td></tr>
+      <tr><td class="key mono">prevencao</td><td>{{PREVENTION}}</td></tr>
+      <tr><td class="key mono">entrega</td><td>{{DELIVERY_RESULT}}</td></tr>
+      <tr><td class="key mono">evidencias</td><td>{{EVIDENCE_SUMMARY}}</td></tr>
+      <tr><td class="key mono">lacunas</td><td>{{GAPS_AND_BLOCKERS}}</td></tr>
+    </table>
+
+    <div class="tags">
+      <div class="tag-label mono">FOCO</div><span class="tag focus">{{FOCUS_TAG_1}}</span><span class="tag focus">{{FOCUS_TAG_2}}</span><span class="tag focus">{{FOCUS_TAG_3}}</span>
+      <div class="tag-label mono">ESTADO</div><span class="tag">{{STATE_TAG_1}}</span><span class="tag">{{STATE_TAG_2}}</span><span class="tag">{{STATE_TAG_3}}</span>
+      <div class="tag-label mono">ORIGEM</div><span class="tag">{{ORIGIN_TAG_1}}</span><span class="tag">{{ORIGIN_TAG_2}}</span><span class="tag">{{ORIGIN_TAG_3}}</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label mono">DELIVERY STATUS</div>
+    <table class="deliveries" role="presentation">
+      <tr><td class="key mono">app_reports</td><td>{{APP_REPORTS_STATUS}} · {{APP_REPORTS_RECEIPT_OR_URL}}</td></tr>
+      <tr><td class="key mono">email</td><td>{{EMAIL_STATUS}} · {{EMAIL_RECEIPT_OR_ERROR}}</td></tr>
+      <tr><td class="key mono">whatsapp</td><td>{{WHATSAPP_STATUS}} · {{WHATSAPP_RECEIPT_OR_ERROR}}</td></tr>
+    </table>
+  </div>
+
+  <div class="footer mono">EXECUTAR_ROUTINE_STATUS_V1 · routine={{ROUTINE_ID}} · report={{REPORT_ID}} · leitura: header → progresso → agora → properties → delivery</div>
+</div>
+</body>
+</html>
