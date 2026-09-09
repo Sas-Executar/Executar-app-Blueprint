@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{DOCUMENT_TITLE}}</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;padding:24px;background:#fff;color:#111}.mapa{max-width:900px;margin:auto}.meta{font:12px monospace;color:#666}.strip{margin-top:24px;background:#1f2830;border-radius:999px;height:120px;position:relative}.track{position:absolute;left:10%;right:10%;top:50%;height:28px;transform:translateY(-50%);background:linear-gradient(90deg,#f1f1f1 0 50%,#16d719 50% 100%);border-radius:14px}.node{position:absolute;top:50%;transform:translate(-50%,-50%);width:82px;height:82px;border-radius:50%;display:grid;place-items:center;border:5px solid #fff;font-weight:800}.chat{left:10%;background:#1f2830;color:#fff}.selector{left:50%;background:#fff;color:#222}.done{left:90%;background:#16d719;color:#fff}.labels{display:grid;grid-template-columns:1fr 1fr 1fr;text-align:center;margin-top:12px;font:12px monospace}.trace{margin-top:24px;font:11px monospace;color:#777}
+</style>
+</head>
+<body>
+<main class="mapa">
+<div class="meta">{{PROJECT_ID}} · {{PERIOD}} · {{MAPA_OS_STATE}}</div>
+<h1>{{MAPA_OS_TITLE}}</h1>
+<p>{{MAPA_OS_CONTEXT}}</p>
+<div class="strip" aria-label="Workflow físico: Copiloto, Seletor e Feito"><div class="track"></div><div class="node chat" data-symbol-id="SYM-CHAT-001">CHAT</div><div class="node selector" data-symbol-id="SYM-SELECTOR-001">SEL</div><div class="node done" data-symbol-id="SYM-DONE-001">✓</div></div>
+<div class="labels"><span>{{CHAT_LABEL}}</span><span>{{SELECTOR_LABEL}}</span><span>{{DONE_LABEL}}</span></div>
+<div class="trace">{{TRACEABILITY}} · recognition by Scanner · actions resolved in digital state</div>
+</main>
+</body>
+</html>
