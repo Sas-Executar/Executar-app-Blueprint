@@ -22,6 +22,12 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | Operations | OPS-* | docs/15-operations-release | runbook, incidents, releases | P0/P1 |
 | Personalization | PERS-* | docs/16-personalization | profile, preferences, memory, context | P0 |
 
+## Canonical artifact registry
+
+| ID | Artifact | Path | Status | Version | Role |
+|---|---|---|---|---|---|
+| PROD-001 | EXECUTAR — Visão do Produto | `docs/01-product/PRODUCT_VISION.md` | pre_approved | 0.9.0 | semantic root for product derivation |
+
 ## Canonical flow
 EVID → PROBLEM → ICP → JOURNEY → JTBD → VALUE → PRD → REQ → AC → ADR → SPEC → CODE → TEST → EVAL → RELEASE → KPI → LEARNING
 
@@ -29,4 +35,4 @@ EVID → PROBLEM → ICP → JOURNEY → JTBD → VALUE → PRD → REQ → AC �
 `AGENTS.md` → this index → affected domain docs → requirements/AC → ADR/contracts/schemas → code → tests → implementation → verification → documentation update.
 
 ## State semantics
-`draft ≠ review ≠ approved ≠ implemented ≠ tested ≠ verified ≠ released`.
+`draft ≠ review ≠ pre_approved ≠ approved ≠ implemented ≠ tested ≠ verified ≠ released`.
