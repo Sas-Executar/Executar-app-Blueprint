@@ -2,7 +2,7 @@
 id: AGENT-FLOW-001
 type: agent_workflow
 title: Copiloto — Sync, Plan, Pre-Approve, Execute, Reconcile
-status: draft_for_pre_approval
+status: pre_approved
 version: 0.9.0
 owner: null
 ---
