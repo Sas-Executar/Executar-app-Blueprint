@@ -1,0 +1,37 @@
+{
+  "id": "REF-DS-MANIFEST-001",
+  "source_package": "EXECUTAR_design_system_extract(1).zip",
+  "declared_source_repository": "Sas-Executar/Desyng-System-ecossitema",
+  "declared_source_branch": "claude/design-handoff-specs-ulc1r1",
+  "verification_note": "The current GitHub connector could not read the declared source repository directly; provenance is therefore recorded from the supplied extraction package and its internal README.",
+  "files": [
+    {
+      "path": "package.json",
+      "sha256": "b9cdbceb0caa255f57772d038c941b1aa79411ade81426bb5c73e591549a5d58",
+      "classification": "CORPUS_DIRECT",
+      "role": "declared exact manifest of packages/design-tokens"
+    },
+    {
+      "path": "variables.css",
+      "sha256": "e46b5f4745434cdb5b96df792e5acad869c048681918b08ce8d966793dfed2f5",
+      "classification": "CORPUS_DIRECT",
+      "role": "design token extraction"
+    },
+    {
+      "path": "README.txt",
+      "sha256": "a5111cc276e48f8a8c51c70ddb9c7b3a43636c02807ff2f941a624ac19c1af67",
+      "classification": "CORPUS_DIRECT",
+      "role": "provenance and limitation note supplied in the extraction package"
+    },
+    {
+      "path": "EXECUTAR_Showroom_reconstructed.html",
+      "sha256": "a8dd42dce7fa340a9f61f3d987d309c25a2435c7bc56bbdfaa4e8b087dce5af4",
+      "classification": "CORPUS_DERIVED",
+      "role": "standalone reconstruction; not the original final_bundle.html"
+    }
+  ],
+  "gaps": [
+    "Original final_bundle.html / bundle.html from the Claude Artifact is not present in the supplied extraction and must not be represented as original.",
+    "Direct remote verification of the declared source repository was unavailable through the current GitHub connector session."
+  ]
+}
