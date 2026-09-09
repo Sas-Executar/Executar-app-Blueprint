@@ -16,6 +16,7 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | Data | DATA-* | docs/07-data | model, migrations, RLS, retention | P0 |
 | API | API-* | docs/08-api-contracts | API/event/error/delivery/action contracts | P0 |
 | Frontend | UI-*/SPEC-WORKSPACE-* | docs/09-frontend | IA, routes, states, task views, design system | P0/P1 |
+| Design System References | UI-005/REF-DS-* | docs/09-frontend + references/design-system | external design-system contract, source snapshots and provenance | P0 |
 | Backend | BE-* | docs/10-backend | boundaries, use cases, jobs | P0/P1 |
 | Security | SEC-* | docs/11-security | threats, permissions, injection | P0 |
 | Tests & Evals | TEST-* | docs/12-testing-evals | test strategy and agent quality gates | P0 |
@@ -29,6 +30,10 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | ID | Artifact | Path | Status | Version | Role |
 |---|---|---|---|---|---|
 | MASTER-CHECK-001 | EXECUTAR — Master Index Checklist | `MASTER_INDEX_CHECKLIST.md` | active | 1.0.0 | consolidated structured/pending checklist |
+| UI-005 | EXECUTAR Design System Contract | `docs/09-frontend/DESIGN_SYSTEM.md` | pre_approved | 1.0.0 | governed consumption contract for external ecosystem design system |
+| REF-DS-001 | EXECUTAR Design System Reference Extract | `references/design-system/README.md` | registered_reference | 1.0.0 | provenance-governed reference snapshot from supplied extraction package |
+| REF-DS-MANIFEST-001 | Design System Source Manifest | `references/design-system/SOURCE_MANIFEST.json` | registered_reference | 1.0.0 | SHA-256 inventory and epistemic classification of supplied files |
+| REF-DS-SHOWROOM-001 | Reconstructed Standalone Showroom | `references/design-system/EXECUTAR_Showroom_reconstructed.html` | corpus_derived | 1.0.0 | reconstructed reference; not original final_bundle.html |
 | PROD-001 | EXECUTAR — Visão do Produto | `docs/01-product/PRODUCT_VISION.md` | pre_approved | 0.9.0 | semantic root for product derivation |
 | PROD-FLOW-001 | EXECUTAR — Fluxo de Uso Omnicanal | `docs/01-product/PRODUCT_USE_FLOW.md` | pre_approved | 0.9.0 | end-to-end user flow across sync, planning, pre-approval, channels and analog execution |
 | PRD-OMNI-001 | Gestão Omnicanal Autônoma e Interdependente | `docs/02-requirements/PRD-OMNICHANNEL-001.md` | pre_approved | 0.9.0 | product requirements for single-state multi-channel work management |
@@ -61,6 +66,12 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | WF-MAPA-003 | Example Test | `skills/executar-mapa-os/references/workflows/03-example-test.md` | example_only | 1.1.0 | isolated demonstration workflow |
 | DELIV-MAPA-006 | Mapa-OS Scanner symbol strip | `deliverables/templates/mapa-os-scanner-symbol-strip.template.html` | registered | 1.0.0 | physical symbol surface; actions resolved by Scanner |
 | SKILL-COP-001 | copiloto-executar | `skills/copiloto-executar/SKILL.md` | registered | source package | daily EXECUTAR copiloto skill package |
+
+## Boundary: Design System
+
+`Desyng-System-ecossitema (intended SOT) → UI-005 consumption contract → Workspace / Reports / Mapa-OS / Scanner surfaces`.
+
+Reference files under `references/design-system/` are evidence snapshots, not a forked source of truth. The reconstructed showroom is explicitly `CORPUS_DERIVED`; original `final_bundle.html` remains a GAP.
 
 ## Boundary: Omnichannel work management
 
