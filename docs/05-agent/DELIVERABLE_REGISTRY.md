@@ -2,7 +2,7 @@
 id: AGENT-DELIV-REGISTRY-001
 type: deliverable_registry
 status: registered
-version: 1.2.0
+version: 1.3.0
 owner: null
 ---
 # Deliverable Registry
@@ -21,10 +21,14 @@ owner: null
 | DELIV-COP-004 | copiloto-executar | `/fechardia` | `deliverables/templates/copiloto-command-outputs.template.md` | Comando declarado |
 | DELIV-COP-005 | copiloto-executar | `/replanejamento` | `deliverables/templates/copiloto-command-outputs.template.md` | Comando declarado |
 | DELIV-COP-006 | copiloto-executar | Saída estruturada do orquestrador | `deliverables/templates/copiloto-orchestrator-output.template.json` | Derivado do schema da skill |
+| DELIV-ONB-001 | Copiloto / Omnichannel Flow | Onboarding operacional: Copiloto + Mapa-OS + Scanner | `deliverables/templates/onboarding-copilot-scanner.template.md` | Derivado de `PROD-FLOW-001` / `PRD-OMNI-001`; conteúdo variável por placeholders |
 | DELIV-ROUT-001 | Modo Rotinas / copiloto-executar | Status Report canônico HTML | `deliverables/templates/status-report-routine.template.html` | ADR/PRD/SPEC de Rotinas |
 | DELIV-ROUT-002 | Modo Rotinas / canais | Variantes App Reports / Email / WhatsApp | `deliverables/templates/status-report-routine-channel-variants.template.md` | Projeções do mesmo report canônico |
 | DELIV-SUP-001 | Supporting model | Plano da Semana · Prisma A4 · `LAYOUT-PRISM-002` | `deliverables/templates/plano-semana-prisma-a4.template.html` | Modelo de apoio |
 | DELIV-SUP-002 | Supporting model | Processo de trabalho + formulário de ciclo + semana | `deliverables/templates/processo-trabalho-formulario-semana.template.html` | Modelo de apoio |
+
+## Default agent deliverables
+Para novos planos/replanejamentos, o fluxo omnicanal prevê três famílias de saída: `DELIV-ONB-001` (onboarding), `DELIV-ROUT-001` (status report) e `DELIV-MAPA-*` (Mapa-OS), além da visualização Mermaid de pré-aprovação.
 
 ## Mapa-OS rule
 O Mapa-OS físico é uma projeção do estado digital canônico gerada pelo agente para gestão analógica das tarefas. Impressão, calendário ou símbolos não criam estado paralelo.
