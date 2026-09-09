@@ -20,7 +20,7 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | Backend | BE-* | docs/10-backend | boundaries, use cases, jobs | P0/P1 |
 | Security | SEC-* | docs/11-security | threats, permissions, injection | P0 |
 | Tests & Evals | TEST-* | docs/12-testing-evals | test strategy and agent quality gates | P0 |
-| Observability | OBS-* | docs/13-observability | traces, logs, metrics, AI cost | P0/P1 |
+| Observability | OBS-* | docs/13-observability | traces, logs, metrics, AI cost and business telemetry | P0/P1 |
 | DevOps | DEVOPS-* | docs/14-devops | environments, CI/CD, deploy | P0 |
 | Operations | OPS-* | docs/15-operations-release | runbook, incidents, releases | P0/P1 |
 | Personalization | PERS-* | docs/16-personalization | profile, preferences, memory, context | P0 |
@@ -31,11 +31,17 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | ID | Artifact | Path | Status | Version | Role |
 |---|---|---|---|---|---|
 | MASTER-CHECK-001 | EXECUTAR — Master Index Checklist | `MASTER_INDEX_CHECKLIST.md` | active | 1.0.0 | consolidated structured/pending checklist |
-| BUS-INDEX-001 | Business & Monetization Index | `docs/17-business/README.md` | active | 1.0.0 | entrypoint for commercial and financial governance |
+| BUS-INDEX-001 | Business & Monetization Index | `docs/17-business/README.md` | active | 1.1.0 | entrypoint for commercial and financial governance |
 | BUS-MODEL-001 | EXECUTAR — Modelo de Negócio Brasil | `docs/17-business/BUSINESS_MODEL.md` | pre_approved | 0.9.0 | prosumer PLG → Business monetization architecture |
 | PRICING-001 | EXECUTAR — Pricing Brasil | `docs/17-business/PRICING.md` | pre_approved | 0.9.0 | proposed test pricing, annual policy and usage layer |
 | UNIT-ECON-001 | EXECUTAR — Unit Economics Brasil | `docs/17-business/UNIT_ECONOMICS.md` | pre_approved | 0.9.0 | COGS, tax, CAC, payback, break-even and scale model |
 | UNIT-ECON-DATA-001 | Unit Economics Scenarios | `docs/17-business/unit-economics-scenarios.csv` | registered_analysis | 1.0.0 | reproducible 100/500/1000/5000-account scenario data |
+| OBS-BIZ-001 | Business & Unit Economics Telemetry Contract | `docs/13-observability/BUSINESS_TELEMETRY.md` | pre_approved | 0.9.0 | events, attribution, reconciliation and pricing-revalidation contract |
+| OBS-001 | EXECUTAR Observability Architecture | `docs/13-observability/OBSERVABILITY.md` | pre_approved | 0.9.0 | separates domain state from logs/traces/metrics/economic telemetry |
+| OBS-002 | EXECUTAR Trace Schema | `docs/13-observability/TRACE_SCHEMA.md` | pre_approved | 0.9.0 | correlation envelope for agent, tools, domain, channels and costs |
+| OBS-004 | EXECUTAR Metrics Contract | `docs/13-observability/METRICS.md` | pre_approved | 0.9.0 | canonical product, retention and unit-economics metric definitions |
+| OBS-006 | EXECUTAR AI Cost Budget | `docs/13-observability/AI_COST_BUDGET.md` | pre_approved | 0.9.0 | model/capability cost attribution, credits and AI COGS guardrails |
+| OBS-PLAN-001 | Telemetry Implementation Plan | `docs/13-observability/IMPLEMENTATION_PLAN.md` | draft | 0.9.0 | staged implementation plan once runtime/provider dependencies exist |
 | UI-005 | EXECUTAR Design System Contract | `docs/09-frontend/DESIGN_SYSTEM.md` | pre_approved | 1.0.0 | governed consumption contract for external ecosystem design system |
 | REF-DS-001 | EXECUTAR Design System Reference Extract | `references/design-system/README.md` | registered_reference | 1.0.0 | provenance-governed reference snapshot from supplied extraction package |
 | REF-DS-MANIFEST-001 | Design System Source Manifest | `references/design-system/SOURCE_MANIFEST.json` | registered_reference | 1.0.0 | SHA-256 inventory and epistemic classification of supplied files |
@@ -73,11 +79,17 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | DELIV-MAPA-006 | Mapa-OS Scanner symbol strip | `deliverables/templates/mapa-os-scanner-symbol-strip.template.html` | registered | 1.0.0 | physical symbol surface; actions resolved by Scanner |
 | SKILL-COP-001 | copiloto-executar | `skills/copiloto-executar/SKILL.md` | registered | source package | daily EXECUTAR copiloto skill package |
 
-## Boundary: Business Model & Pricing
+## Boundary: Business Model, Pricing & Telemetry
 
-`Product value → BUS-MODEL-001 → PRICING-001 → UNIT-ECON-001 → telemetry → pricing/COGS revalidation`.
+`Product value → BUS-MODEL-001 → PRICING-001 → UNIT-ECON-001 → OBS-BIZ-001 → reconciled observations → pricing/COGS revalidation`.
 
-Prices, CAC, churn, plan mix and OPEX are `PROPOSED` until observed. Public tariffs and tax rules are evidence inputs; scenario calculations are `CORPUS_DERIVED`. The 5,000-account scenario exceeds the current Simples Nacional revenue ceiling under the modeled mix and therefore carries a mandatory tax-regime GAP.
+Prices, CAC, churn, plan mix and OPEX are `PROPOSED` until observed. Public tariffs and tax rules are evidence inputs; scenario calculations are `CORPUS_DERIVED`. Telemetry must distinguish `observed_unreconciled`, `observed_reconciled` and `derived_observed`. The 5,000-account scenario exceeds the current Simples Nacional revenue ceiling under the modeled mix and therefore carries a mandatory tax-regime GAP.
+
+## Boundary: Telemetry × Domain State
+
+`Runtime/domain result → telemetry reference`, never `telemetry event → implicit domain mutation`.
+
+Channel delivery, model usage, Scanner recognition and billing events may be correlated to domain operations, but do not themselves promote Task/Action/Deliverable/Routine state.
 
 ## Boundary: Design System
 
@@ -101,7 +113,7 @@ Mapa-OS remains a projection/deliverable. Scanner owns visual recognition and ac
 EVID → PROBLEM → ICP → JOURNEY → JTBD → VALUE → PRD → REQ → AC → ADR → SPEC → CODE → TEST → EVAL → RELEASE → KPI → LEARNING
 
 ## Agent read path
-`AGENTS.md` → this index → `MASTER_INDEX_CHECKLIST.md` → affected domain docs → requirements/AC → ADR/contracts/specs/schemas → registered skills/internal asset indexes → business/pricing guardrails when commercial impact exists → code → tests → implementation → verification → documentation update.
+`AGENTS.md` → this index → `MASTER_INDEX_CHECKLIST.md` → affected domain docs → requirements/AC → ADR/contracts/specs/schemas → registered skills/internal asset indexes → business/pricing/telemetry guardrails when commercial impact exists → code → tests → implementation → reconciliation/verification → documentation update.
 
 ## State semantics
 `draft ≠ review ≠ draft_for_pre_approval ≠ pre_approved ≠ approved ≠ implemented ≠ tested ≠ verified ≠ released`.
