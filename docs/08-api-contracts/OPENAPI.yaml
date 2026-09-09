@@ -1,0 +1,9 @@
+openapi: 3.1.0
+info:
+  title: Executar API
+  version: 0.0.0
+servers: []
+paths: {}
+components:
+  schemas: {}
+# Template: preencher endpoints, auth, schemas, errors, examples e versionamento.
