@@ -10,6 +10,8 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | Domain | DOM-* | docs/03-domain | vocabulary, rules, states, events | P0 |
 | Architecture | ARCH-*/ADR-* | docs/04-architecture | system design and decisions | P0 |
 | Agent | AGENT-* | docs/05-agent | runtime, tools, guardrails, memory | P0 |
+| Skills | SKILL-* | skills | executable/imported skill packages and contracts | P0 |
+| Deliverables | DELIV-* | deliverables | reusable placeholder output models | P0 |
 | Prompts | PROMPT-* | docs/06-prompts | prompt contracts and failures | P0 |
 | Data | DATA-* | docs/07-data | model, migrations, RLS, retention | P0 |
 | API | API-* | docs/08-api-contracts | API/event/error contracts | P0 |
@@ -27,12 +29,18 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | ID | Artifact | Path | Status | Version | Role |
 |---|---|---|---|---|---|
 | PROD-001 | EXECUTAR — Visão do Produto | `docs/01-product/PRODUCT_VISION.md` | pre_approved | 0.9.0 | semantic root for product derivation |
+| AGENT-SKILL-REGISTRY-001 | Skill Registry | `docs/05-agent/SKILL_REGISTRY.md` | registered | 1.0.0 | inventory and authority boundaries for skills |
+| AGENT-DELIV-REGISTRY-001 | Deliverable Registry | `docs/05-agent/DELIVERABLE_REGISTRY.md` | registered | 1.0.0 | maps skills to placeholder output models |
+| SKILL-MAPA-OS-001 | executar-mapa-os | `skills/executar-mapa-os/SKILL.md` | registered | 1.0.0 | operational Mapa-OS skill package |
+| SKILL-COP-001 | copiloto-executar | `skills/copiloto-executar/SKILL.md` | registered | source package | daily EXECUTAR copiloto skill package |
 
 ## Canonical flow
 EVID → PROBLEM → ICP → JOURNEY → JTBD → VALUE → PRD → REQ → AC → ADR → SPEC → CODE → TEST → EVAL → RELEASE → KPI → LEARNING
 
 ## Agent read path
-`AGENTS.md` → this index → affected domain docs → requirements/AC → ADR/contracts/schemas → code → tests → implementation → verification → documentation update.
+`AGENTS.md` → this index → affected domain docs → requirements/AC → ADR/contracts/schemas → registered skills/deliverable contracts → code → tests → implementation → verification → documentation update.
 
 ## State semantics
 `draft ≠ review ≠ pre_approved ≠ approved ≠ implemented ≠ tested ≠ verified ≠ released`.
+
+`registered` is an inventory/traceability state for imported packages and templates. It does not imply `approved`, `implemented`, `tested`, `verified` or `released`.

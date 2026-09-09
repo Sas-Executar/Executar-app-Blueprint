@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "document_id": "{{DOC_ID}}",
+    "period": "{{DOC_PERIOD}}",
+    "trace": "{{DOC_TRACE}}"
+  },
+  "epic": {
+    "number": "{{EPIC_NUMBER}}",
+    "title": "{{EPIC_TITLE}}",
+    "description": "{{EPIC_DESCRIPTION}}",
+    "state": "{{EPIC_STATE}}",
+    "progress_pct": "{{EPIC_PROGRESS_PCT}}",
+    "intent": "{{EPIC_INTENT}}"
+  },
+  "kpis": [
+    {"label":"{{KPI_01_LABEL}}","value":"{{KPI_01_VALUE}}","caption":"{{KPI_01_CAPTION}}"},
+    {"label":"{{KPI_02_LABEL}}","value":"{{KPI_02_VALUE}}","caption":"{{KPI_02_CAPTION}}"},
+    {"label":"{{KPI_03_LABEL}}","value":"{{KPI_03_VALUE}}","caption":"{{KPI_03_CAPTION}}"},
+    {"label":"{{KPI_04_LABEL}}","value":"{{KPI_04_VALUE}}","caption":"{{KPI_04_CAPTION}}"}
+  ],
+  "calendar": [
+    {"day":"{{DAY_01_NUMBER}}","date":"{{DAY_01_DATE}}","weekday":"{{DAY_01_WEEKDAY}}","title":"{{DAY_01_TITLE}}","focus":"{{DAY_01_FOCUS}}","tracks":["{{DAY_01_TRACK_01}}","{{DAY_01_TRACK_02}}"]},
+    {"day":"{{DAY_02_NUMBER}}","date":"{{DAY_02_DATE}}","weekday":"{{DAY_02_WEEKDAY}}","title":"{{DAY_02_TITLE}}","focus":"{{DAY_02_FOCUS}}","tracks":["{{DAY_02_TRACK_01}}","{{DAY_02_TRACK_02}}"]},
+    {"day":"{{DAY_03_NUMBER}}","date":"{{DAY_03_DATE}}","weekday":"{{DAY_03_WEEKDAY}}","title":"{{DAY_03_TITLE}}","focus":"{{DAY_03_FOCUS}}","tracks":["{{DAY_03_TRACK_01}}","{{DAY_03_TRACK_02}}"]},
+    {"day":"{{DAY_04_NUMBER}}","date":"{{DAY_04_DATE}}","weekday":"{{DAY_04_WEEKDAY}}","title":"{{DAY_04_TITLE}}","focus":"{{DAY_04_FOCUS}}","tracks":["{{DAY_04_TRACK_01}}","{{DAY_04_TRACK_02}}"]},
+    {"day":"{{DAY_05_NUMBER}}","date":"{{DAY_05_DATE}}","weekday":"{{DAY_05_WEEKDAY}}","title":"{{DAY_05_TITLE}}","focus":"{{DAY_05_FOCUS}}","tracks":["{{DAY_05_TRACK_01}}","{{DAY_05_TRACK_02}}"]},
+    {"day":"{{DAY_06_NUMBER}}","date":"{{DAY_06_DATE}}","weekday":"{{DAY_06_WEEKDAY}}","title":"{{DAY_06_TITLE}}","focus":"{{DAY_06_FOCUS}}","tracks":["{{DAY_06_TRACK_01}}","{{DAY_06_TRACK_02}}"]},
+    {"day":"{{DAY_07_NUMBER}}","date":"{{DAY_07_DATE}}","weekday":"{{DAY_07_WEEKDAY}}","title":"{{DAY_07_TITLE}}","focus":"{{DAY_07_FOCUS}}","tracks":["{{DAY_07_TRACK_01}}","{{DAY_07_TRACK_02}}"]}
+  ],
+  "deliverables": {
+    "hero": {"title":"{{HERO_TITLE}}","description":"{{HERO_DESCRIPTION}}","state":"{{HERO_STATE}}"},
+    "support": [
+      {"title":"{{SUPPORT_01_TITLE}}","description":"{{SUPPORT_01_DESCRIPTION}}","status":"{{SUPPORT_01_STATUS}}"},
+      {"title":"{{SUPPORT_02_TITLE}}","description":"{{SUPPORT_02_DESCRIPTION}}","status":"{{SUPPORT_02_STATUS}}"},
+      {"title":"{{SUPPORT_03_TITLE}}","description":"{{SUPPORT_03_DESCRIPTION}}","status":"{{SUPPORT_03_STATUS}}"},
+      {"title":"{{SUPPORT_04_TITLE}}","description":"{{SUPPORT_04_DESCRIPTION}}","status":"{{SUPPORT_04_STATUS}}"}
+    ],
+    "next": "{{NEXT_STATE}}"
+  }
+}
