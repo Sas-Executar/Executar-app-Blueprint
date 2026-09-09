@@ -1,0 +1,19 @@
+name: quality-gates
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  blueprint-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Blueprint structure check
+        shell: bash
+        run: |
+          test -f AGENTS.md
+          test -f MASTER_INDEX.md
+          test -f docs/00-governance/TRACEABILITY_MATRIX.md
+          test -f docs/05-agent/TOOL_REGISTRY.md
+          test -f docs/11-security/AI_THREAT_MODEL.md
+          test -f docs/12-testing-evals/QUALITY_GATES.md

@@ -1,0 +1,2 @@
+-- Template de seed local.
+-- Use apenas dados sintéticos e reproduzíveis.
