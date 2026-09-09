@@ -24,12 +24,18 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | DevOps | DEVOPS-* | docs/14-devops | environments, CI/CD, deploy | P0 |
 | Operations | OPS-* | docs/15-operations-release | runbook, incidents, releases | P0/P1 |
 | Personalization | PERS-* | docs/16-personalization | profile, preferences, memory, context | P0 |
+| Business & Monetization | BUS-*/PRICING-*/UNIT-ECON-* | docs/17-business | business model, pricing, unit economics and financial guardrails | P0 |
 
 ## Canonical artifact registry
 
 | ID | Artifact | Path | Status | Version | Role |
 |---|---|---|---|---|---|
 | MASTER-CHECK-001 | EXECUTAR — Master Index Checklist | `MASTER_INDEX_CHECKLIST.md` | active | 1.0.0 | consolidated structured/pending checklist |
+| BUS-INDEX-001 | Business & Monetization Index | `docs/17-business/README.md` | active | 1.0.0 | entrypoint for commercial and financial governance |
+| BUS-MODEL-001 | EXECUTAR — Modelo de Negócio Brasil | `docs/17-business/BUSINESS_MODEL.md` | pre_approved | 0.9.0 | prosumer PLG → Business monetization architecture |
+| PRICING-001 | EXECUTAR — Pricing Brasil | `docs/17-business/PRICING.md` | pre_approved | 0.9.0 | proposed test pricing, annual policy and usage layer |
+| UNIT-ECON-001 | EXECUTAR — Unit Economics Brasil | `docs/17-business/UNIT_ECONOMICS.md` | pre_approved | 0.9.0 | COGS, tax, CAC, payback, break-even and scale model |
+| UNIT-ECON-DATA-001 | Unit Economics Scenarios | `docs/17-business/unit-economics-scenarios.csv` | registered_analysis | 1.0.0 | reproducible 100/500/1000/5000-account scenario data |
 | UI-005 | EXECUTAR Design System Contract | `docs/09-frontend/DESIGN_SYSTEM.md` | pre_approved | 1.0.0 | governed consumption contract for external ecosystem design system |
 | REF-DS-001 | EXECUTAR Design System Reference Extract | `references/design-system/README.md` | registered_reference | 1.0.0 | provenance-governed reference snapshot from supplied extraction package |
 | REF-DS-MANIFEST-001 | Design System Source Manifest | `references/design-system/SOURCE_MANIFEST.json` | registered_reference | 1.0.0 | SHA-256 inventory and epistemic classification of supplied files |
@@ -67,6 +73,12 @@ Canonic index for the Executar App Blueprint. `status` indicates documentation s
 | DELIV-MAPA-006 | Mapa-OS Scanner symbol strip | `deliverables/templates/mapa-os-scanner-symbol-strip.template.html` | registered | 1.0.0 | physical symbol surface; actions resolved by Scanner |
 | SKILL-COP-001 | copiloto-executar | `skills/copiloto-executar/SKILL.md` | registered | source package | daily EXECUTAR copiloto skill package |
 
+## Boundary: Business Model & Pricing
+
+`Product value → BUS-MODEL-001 → PRICING-001 → UNIT-ECON-001 → telemetry → pricing/COGS revalidation`.
+
+Prices, CAC, churn, plan mix and OPEX are `PROPOSED` until observed. Public tariffs and tax rules are evidence inputs; scenario calculations are `CORPUS_DERIVED`. The 5,000-account scenario exceeds the current Simples Nacional revenue ceiling under the modeled mix and therefore carries a mandatory tax-regime GAP.
+
 ## Boundary: Design System
 
 `Desyng-System-ecossitema (intended SOT) → UI-005 consumption contract → Workspace / Reports / Mapa-OS / Scanner surfaces`.
@@ -89,9 +101,9 @@ Mapa-OS remains a projection/deliverable. Scanner owns visual recognition and ac
 EVID → PROBLEM → ICP → JOURNEY → JTBD → VALUE → PRD → REQ → AC → ADR → SPEC → CODE → TEST → EVAL → RELEASE → KPI → LEARNING
 
 ## Agent read path
-`AGENTS.md` → this index → `MASTER_INDEX_CHECKLIST.md` → affected domain docs → requirements/AC → ADR/contracts/specs/schemas → registered skills/internal asset indexes → code → tests → implementation → verification → documentation update.
+`AGENTS.md` → this index → `MASTER_INDEX_CHECKLIST.md` → affected domain docs → requirements/AC → ADR/contracts/specs/schemas → registered skills/internal asset indexes → business/pricing guardrails when commercial impact exists → code → tests → implementation → verification → documentation update.
 
 ## State semantics
 `draft ≠ review ≠ draft_for_pre_approval ≠ pre_approved ≠ approved ≠ implemented ≠ tested ≠ verified ≠ released`.
 
-`registered`, `registered_reference` and `registered_from_source` are inventory/traceability states. They do not imply implementation, verification or release.
+`registered`, `registered_reference`, `registered_from_source` and `registered_analysis` are inventory/traceability states. They do not imply implementation, verification or release.

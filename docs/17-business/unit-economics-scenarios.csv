@@ -1,0 +1,5 @@
+scenario_accounts,mix_solo_pct,mix_pro_pct,mix_business_pct,mrr_brl,arr_brl,gateway_billing_brl,ai_cogs_brl,whatsapp_cogs_brl,infra_support_brl,contribution_pre_tax_brl,tax_regime,effective_tax_rate,tax_monthly_brl,contribution_post_tax_brl,opex_fixed_brl,operating_result_pre_cac_brl,cac_target_weighted_brl,acquisition_cash_brl
+100,55,35,10,10881.00,130572.00,463.40,1098.90,429.05,740.00,8149.65,Simples_Anexo_III,0.060000,652.86,7496.79,50000.00,-42503.21,225.50,22550.00
+500,55,35,10,54405.00,652860.00,2317.01,5494.50,2145.25,3700.00,40748.24,Simples_Anexo_III,0.107980,5874.68,34873.57,50000.00,-15126.43,225.50,112750.00
+1000,55,35,10,108810.00,1305720.00,4634.02,10989.00,4290.50,7400.00,81496.48,Simples_Anexo_III,0.132705,14439.60,67056.88,50000.00,17056.88,225.50,225500.00
+5000,55,35,10,544050.00,6528600.00,23170.10,54945.00,21452.50,37000.00,407482.41,OUTSIDE_SIMPLES_GAP,,,,50000.00,,225.50,1127500.00
