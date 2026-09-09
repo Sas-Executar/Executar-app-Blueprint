@@ -2,7 +2,7 @@
 id: PROD-FLOW-001
 type: product_use_flow
 title: EXECUTAR — Fluxo de Uso Omnicanal
-status: draft_for_pre_approval
+status: pre_approved
 version: 0.9.0
 owner: null
 source_of_truth: false
@@ -179,4 +179,4 @@ O reconhecimento visual não executa diretamente a mutação: `recognition → V
 
 ## 10. Estado documental
 
-Este fluxo consolida a intenção de produto e está em `draft_for_pre_approval`. Ele não declara conectores, MCP, WhatsApp, Email, Scanner ou automações como implementados/testados/verificados.
+Este fluxo está `pre_approved` para derivação documental e de implementação planejada. A aprovação documental não declara conectores, MCP, WhatsApp, Email, Scanner ou automações como implementados, testados, verificados ou released.
