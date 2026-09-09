@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Processo de Trabalho — {{PROCESS_NAME}}</title>
+<style>
+:root{--ink:#0A0A0A;--blue:#3B5FC4;--blue-deep:#26408F;--paper:#FFFFFF;--bgalt:#F3F4F8;--line:#DADFEE;--orange:#C1502E;--grey:#5B5F6B}*{box-sizing:border-box}body{margin:0;background:var(--bgalt);font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink);padding:40px 16px 80px}.sheet,.form-card,.week-card{max-width:900px;margin:0 auto 56px;background:var(--paper);padding:40px 44px 44px}.rule{height:3px;background:linear-gradient(90deg,var(--blue) 0%,var(--blue) 55%,transparent 100%);margin-bottom:34px}h1.display{font-family:"Arial Black",Arial,sans-serif;font-weight:900;color:var(--blue);font-size:clamp(38px,7vw,64px);line-height:.98;margin:0 0 18px;text-transform:uppercase}.subtitle{display:inline-block;background:var(--ink);color:#fff;font-weight:700;font-size:19px;padding:8px 16px;margin-bottom:44px}.grid{display:grid;grid-template-columns:repeat(4,1fr);row-gap:38px;column-gap:14px}.step{display:flex;flex-direction:column;align-items:flex-start;gap:12px}.step .tag{font-size:11px;font-weight:700;color:var(--blue)}.step .label{font-size:15.5px;line-height:1.28;font-weight:500}.gate-note{font-size:11.5px;color:var(--orange);font-weight:600}.section-title{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--blue);text-transform:uppercase;margin-bottom:6px}h2.section-h{font-size:26px;font-weight:800;margin:0 0 6px}.section-desc{color:var(--grey);font-size:14.5px;max-width:640px;margin-bottom:32px;line-height:1.5}.form-block{margin-bottom:26px;padding-bottom:26px;border-bottom:1px solid var(--line)}.form-block .num{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--blue);padding:2px 8px;margin-bottom:10px}.form-block h3{margin:0 0 4px;font-size:17px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{margin-bottom:12px}.field label{display:block;font-size:12px;font-weight:700;margin-bottom:5px}.field input,.field textarea{width:100%;border:1px solid var(--line);background:var(--bgalt);padding:9px 11px;font-size:14px}.checklist{display:flex;flex-direction:column;gap:8px}.day{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}.dow{font-size:11px;font-weight:800;color:var(--blue)}.dnum{font-size:26px;font-weight:800}.phase{font-size:10.5px;font-weight:700;color:var(--orange)}.whattxt{font-size:14.5px;font-weight:700;margin-bottom:4px}.meta{font-size:12.5px;color:var(--grey)}@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.field-row{grid-template-columns:1fr}.day{grid-template-columns:80px 1fr}}
+</style>
+</head>
+<body>
+<div class="sheet">
+<div class="rule"></div><h1 class="display">Meu Processo<br>de Trabalho</h1><div class="subtitle">{{PROCESS_SUBTITLE}}</div>
+<div class="grid">
+<div class="step"><div class="tag">{{STEP_01_TAG}}</div><div class="label">{{STEP_01_LABEL}}</div></div>
+<div class="step"><div class="tag">{{STEP_02_TAG}}</div><div class="label">{{STEP_02_LABEL}}</div></div>
+<div class="step"><div class="tag">{{STEP_03_TAG}}</div><div class="label">{{STEP_03_LABEL}}</div></div>
+<div class="step"><div class="tag">{{STEP_04_TAG}}</div><div class="label">{{STEP_04_LABEL}}</div><div class="gate-note">{{STEP_04_GATE_NOTE}}</div></div>
+<div class="step"><div class="tag">{{STEP_05_TAG}}</div><div class="label">{{STEP_05_LABEL}}</div></div>
+<div class="step"><div class="tag">{{STEP_06_TAG}}</div><div class="label">{{STEP_06_LABEL}}</div></div>
+<div class="step"><div class="tag">{{STEP_07_TAG}}</div><div class="label">{{STEP_07_LABEL}}</div></div>
+<div class="step"><div class="tag">{{STEP_08_TAG}}</div><div class="label">{{STEP_08_LABEL}}</div><div class="gate-note">{{STEP_08_GATE_NOTE}}</div></div>
+<div class="step"><div class="tag">{{STEP_09_TAG}}</div><div class="label">{{STEP_09_LABEL}}</div></div>
+<div class="step"><div class="tag">{{STEP_10_TAG}}</div><div class="label">{{STEP_10_LABEL}}</div></div>
+<div class="step"><div class="tag">{{STEP_11_TAG}}</div><div class="label">{{STEP_11_LABEL}}</div></div>
+<div class="step"><div class="tag">{{STEP_12_TAG}}</div><div class="label">{{STEP_12_LABEL}}</div></div>
+</div><p>{{METHOD_NAME}} · {{PROCESS_TRACE_ID}}</p></div>
+
+<div class="form-card"><div class="section-title">Preencher a cada ciclo</div><h2 class="section-h">Formulário padrão do ciclo</h2><p class="section-desc">Preencha antes de iniciar a execução para fechar as variáveis obrigatórias do ciclo.</p>
+<div class="form-block"><span class="num">01</span><h3>Identificação do ciclo</h3><div class="field-row"><div class="field"><label>Código do ciclo</label><input type="text" placeholder="{{CYCLE_CODE}}"></div><div class="field"><label>Posição no arco</label><input type="text" placeholder="{{ARC_POSITION}}"></div></div><div class="field"><label>Tema do ciclo</label><input type="text" placeholder="{{CYCLE_THEME}}"></div></div>
+<div class="form-block"><span class="num">02</span><h3>Pauta do ciclo</h3><div class="field"><label>Título de trabalho</label><input type="text" placeholder="{{WORKING_TITLE}}"></div><div class="field-row"><div class="field"><label>Chamada para ação / ferramenta</label><input type="text" placeholder="{{CYCLE_CTA}}"></div><div class="field"><label>Dor de origem</label><input type="text" placeholder="{{ORIGIN_PAIN}}"></div></div></div>
+<div class="form-block"><span class="num">03</span><h3>Especificação da peça-mãe</h3><div class="field-row"><div class="field"><label>Palavras-alvo</label><input type="text" placeholder="{{ARTICLE_WORD_TARGET}}"></div><div class="field"><label>Duração-alvo</label><input type="text" placeholder="{{VIDEO_DURATION_TARGET}}"></div></div><div class="field"><label>Fatores / blocos centrais</label><textarea placeholder="{{CORE_BLOCKS}}"></textarea></div></div>
+<div class="form-block"><span class="num">04</span><h3>Porta de saída</h3><div class="checklist"><label><input type="checkbox"> {{EXIT_CRITERION_01}}</label><label><input type="checkbox"> {{EXIT_CRITERION_02}}</label><label><input type="checkbox"> {{EXIT_CRITERION_03}}</label><label><input type="checkbox"> {{EXIT_CRITERION_04}}</label><label><input type="checkbox"> {{EXIT_CRITERION_05}}</label></div></div>
+<div class="form-block"><span class="num">05</span><h3>Datas do ciclo</h3><div class="field-row"><div class="field"><label>Data de lançamento</label><input type="date"></div><div class="field"><label>Data de fechamento</label><input type="date"></div></div></div>
+<div class="form-block"><span class="num">06</span><h3>Registro de aprendizado</h3><div class="field"><label>Melhor engajamento</label><input type="text" placeholder="{{LEARNING_01}}"></div><div class="field"><label>Melhor formato</label><input type="text" placeholder="{{LEARNING_02}}"></div><div class="field"><label>Próxima pauta</label><textarea placeholder="{{LEARNING_03}}"></textarea></div></div>
+</div>
+
+<div class="week-card"><div class="section-title">Semana de produção</div><h2 class="section-h">{{WEEK_PERIOD}}</h2><p class="section-desc">{{WEEK_EXECUTION_GUIDANCE}}</p>
+<div class="day"><div><span class="dow">{{WEEK_DAY_01_WEEKDAY}}</span><div class="dnum">{{WEEK_DAY_01_DATE}}</div><div class="phase">{{WEEK_DAY_01_PHASE}}</div></div><div><div class="whattxt">{{WEEK_DAY_01_ACTION}}</div><div class="meta">{{WEEK_DAY_01_META}}</div></div></div>
+<div class="day"><div><span class="dow">{{WEEK_DAY_02_WEEKDAY}}</span><div class="dnum">{{WEEK_DAY_02_DATE}}</div><div class="phase">{{WEEK_DAY_02_PHASE}}</div></div><div><div class="whattxt">{{WEEK_DAY_02_ACTION}}</div><div class="meta">{{WEEK_DAY_02_META}}</div></div></div>
+<div class="day"><div><span class="dow">{{WEEK_DAY_03_WEEKDAY}}</span><div class="dnum">{{WEEK_DAY_03_DATE}}</div><div class="phase">{{WEEK_DAY_03_PHASE}}</div></div><div><div class="whattxt">{{WEEK_DAY_03_ACTION}}</div><div class="meta">{{WEEK_DAY_03_META}}</div></div></div>
+<div class="day"><div><span class="dow">{{WEEK_DAY_04_WEEKDAY}}</span><div class="dnum">{{WEEK_DAY_04_DATE}}</div><div class="phase">{{WEEK_DAY_04_PHASE}}</div></div><div><div class="whattxt">{{WEEK_DAY_04_ACTION}}</div><div class="meta">{{WEEK_DAY_04_META}}</div></div></div>
+<div class="day"><div><span class="dow">{{WEEK_DAY_05_WEEKDAY}}</span><div class="dnum">{{WEEK_DAY_05_DATE}}</div><div class="phase">{{WEEK_DAY_05_PHASE}}</div></div><div><div class="whattxt">{{WEEK_DAY_05_ACTION}}</div><div class="meta">{{WEEK_DAY_05_META}}</div></div></div>
+<div class="day"><div><span class="dow">{{WEEK_DAY_06_WEEKDAY}}</span><div class="dnum">{{WEEK_DAY_06_DATE}}</div><div class="phase">{{WEEK_DAY_06_PHASE}}</div></div><div><div class="whattxt">{{WEEK_DAY_06_ACTION}}</div><div class="meta">{{WEEK_DAY_06_META}}</div></div></div>
+<div class="day"><div><span class="dow">{{WEEK_DAY_07_WEEKDAY}}</span><div class="dnum">{{WEEK_DAY_07_DATE}}</div><div class="phase">{{WEEK_DAY_07_PHASE}}</div></div><div><div class="whattxt">{{WEEK_DAY_07_ACTION}}</div><div class="meta">{{WEEK_DAY_07_META}}</div></div></div>
+</div>
+</body>
+</html>
