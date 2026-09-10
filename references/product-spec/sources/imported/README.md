@@ -1,0 +1,15 @@
+# Imported Sources
+
+**Propósito.** Fontes já classificadas e normalizadas, prontas para virar spec canônica.
+
+**O que pertence aqui.** Conteúdo em processo de normalização, um passo antes de se tornar spec canônica em outra área.
+
+**Status.** `GAP — aguardando ingestão de fontes.` Nenhum conteúdo de
+produto foi inventado nesta pasta; ela existe apenas como destino canônico
+para quando fontes reais forem classificadas e normalizadas.
+
+**Classificação.** Todo material incorporado aqui deve primeiro passar pela
+classificação obrigatória (`SOURCE, REQUIREMENT, DECISION, CONSTRAINT,
+CONTRACT, GAP, CONFLICT, PROPOSAL`) descrita em
+`80-GOVERNANCE/TAXONOMY.md`, seguindo o fluxo de
+`80-GOVERNANCE/CONTRIBUTION_RULES.md`.

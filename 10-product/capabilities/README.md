@@ -1,0 +1,15 @@
+# Capabilities
+
+**Propósito.** Especificação individual de cada capability de produto — a unidade principal de organização deste repositório.
+
+**O que pertence aqui.** Um arquivo por capability (`CAP-EXEC-NNN`), referenciado a partir de `00-MANIFEST/CAPABILITY_MAP.md`.
+
+**Status.** `GAP — aguardando ingestão de fontes.` Nenhum conteúdo de
+produto foi inventado nesta pasta; ela existe apenas como destino canônico
+para quando fontes reais forem classificadas e normalizadas.
+
+**Classificação.** Todo material incorporado aqui deve primeiro passar pela
+classificação obrigatória (`SOURCE, REQUIREMENT, DECISION, CONSTRAINT,
+CONTRACT, GAP, CONFLICT, PROPOSAL`) descrita em
+`80-GOVERNANCE/TAXONOMY.md`, seguindo o fluxo de
+`80-GOVERNANCE/CONTRIBUTION_RULES.md`.
