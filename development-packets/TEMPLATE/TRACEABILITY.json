@@ -1,0 +1,17 @@
+{
+  "template": true,
+  "status": "BLOCKED",
+  "epistemic_class": "PROPOSED",
+  "source_refs": [],
+  "requirements": [],
+  "acceptance_criteria": [],
+  "implementation_targets": [],
+  "test_plan_refs": [],
+  "rollback": {
+    "path": null,
+    "not_applicable_reason": null
+  },
+  "gaps": [
+    "Pacote ainda não instanciado"
+  ]
+}
