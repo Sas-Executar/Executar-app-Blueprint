@@ -2,8 +2,8 @@
 
 **Resultado:** PASS_WITH_GAPS
 
-- 11 shells detectadas em `blueprints/`.
-- 10/11 possuem os 11 arquivos estruturais requeridos.
+- 10 shells detectadas em `blueprints/`.
+- 10/10 possuem os 11 arquivos estruturais requeridos.
 - Shell completa é estrutura de especificação; não demonstra produto implementado, testado ou verificado.
 
 ## Product-Spec
