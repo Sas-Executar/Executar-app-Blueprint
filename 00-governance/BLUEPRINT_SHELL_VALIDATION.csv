@@ -1,0 +1,11 @@
+blueprint_id,path,required_files,present_required,missing,status,implementation_status
+"BP-SHELL-001","blueprints/blog","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
+"BP-SHELL-002","blueprints/consulting","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
+"BP-SHELL-003","blueprints/ecosystem-platform","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
+"BP-SHELL-004","blueprints/executar-app","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
+"BP-SHELL-005","blueprints/maestro-integrations","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
+"BP-SHELL-006","blueprints/mapa-cognitivo","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
+"BP-SHELL-007","blueprints/marketplace","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
+"BP-SHELL-008","blueprints/scanner","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
+"BP-SHELL-009","blueprints/vera","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
+"BP-SHELL-010","blueprints/website","11","11","NONE","SHELL_COMPLETE","NOT_ASSERTED"
